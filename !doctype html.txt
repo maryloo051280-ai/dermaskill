@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Мой сайт — Пример</title>
+  <meta name="description" content="Пример современного адаптивного сайта" />
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --accent:#06b6d4;
+      --muted:#a6b0c3;
+      --white:#eef2f7;
+      --radius:12px;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,#071021 0%, #0b1220 100%);color:var(--white);-webkit-font-smoothing:antialiased}
+    header{position:sticky;top:0;z-index:60;background:rgba(4,6,12,0.55);backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,0.03)}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:600}
+    .logo{width:42px;height:42px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:700;color:#041018}
+    nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
+    nav a{color:var(--muted);text-decoration:none;font-weight:600}
+    .cta{background:var(--accent);color:#012024;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700}
+    /* Hero */
+    .hero{padding:56px 24px 40px}
+    .hero-grid{display:grid;grid-template-columns:1fr 420px;gap:32px;align-items:center}
+    h1{font-size:clamp(28px,4vw,42px);margin:0 0 12px}
+    p.lead{color:var(--muted);margin:0 0 18px;line-height:1.6}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:18px;border-radius:14px;border:1px solid rgba(255,255,255,0.02)}
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+    .feature{padding:12px;border-radius:10px;background:rgba(255,255,255,0.02);text-align:center}
+    .feature h4{margin:8px 0 4px;font-size:15px}
+    /* sections */
+    section{padding:48px 24px}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .portfolio{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .thumb{height:120px;border-radius:10px;background:linear-gradient(135deg,#0b1220,#082038);display:flex;align-items:center;justify-content:center;color:var(--muted)}
+    /* footer */
+    footer{padding:28px 24px;border-top:1px solid rgba(255,255,255,0.03);color:var(--muted)}
+    /* responsive */
+    @media (max-width:880px){
+      .hero-grid{grid-template-columns:1fr}
+      .grid-2{grid-template-columns:1fr}
+      .portfolio{grid-template-columns:repeat(2,1fr)}
+      nav ul{display:none}
+      .mobile-toggle{display:inline-block}
+    }
+    .mobile-toggle{display:none;background:transparent;border:0;color:var(--white);font-weight:700}
+    /* simple smooth scroll */
+    html{scroll-behavior:smooth}
+    /* form */
+    .form-row{display:flex;gap:10px}
+    input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--white)}
+    textarea{min-height:110px;resize:vertical}
+    .muted{color:var(--muted);font-size:14px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo">MS</div>
+        <div>
+          <div style="font-size:14px">МойСайт</div>
+          <div style="font-size:12px;color:var(--muted)">Коротко и стильно</div>
+        </div>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="#about">О нас</a></li>
+          <li><a href="#services">Услуги</a></li>
+          <li><a href="#work">Портфолио</a></li>
+          <li><a href="#contact">Контакты</a></li>
+        </ul>
+      </nav>
+
+      <div style="display:flex;gap:12px;align-items:center">
+        <a class="cta" href="#contact">Написать</a>
+        <button class="mobile-toggle" aria-label="Меню" id="menuBtn">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <h1>Создаю быстрые и красивые сайты</h1>
+          <p class="lead">Готовый шаблон для презентации услуг, портфолио или стартапа. Подходит для десктопа и мобильных устройств.</p>
+          <a class="cta" href="#services">Узнать больше</a>
+
+          <div class="card" style="margin-top:20px">
+            <div class="features">
+              <div class="feature">
+                <div style="font-size:20px">⚡</div>
+                <h4>Быстро</h4>
+                <div class="muted">Лёгкая загрузка</div>
+              </div>
+              <div class="feature">
+                <div style="font-size:20px">🎨</div>
+                <h4>Красиво</h4>
+                <div class="muted">Чистый дизайн</div>
+              </div>
+              <div class="feature">
+                <div style="font-size:20px">🔒</div>
+                <h4>Надёжно</h4>
+                <div class="muted">Безопасность</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside>
+          <div class="card">
+            <h3 style="margin:0 0 8px">Свежие кейсы</h3>
+            <p class="muted" style="margin:0 0 12px">Ниже — примеры работ</p>
+            <div style="display:grid;gap:8px">
+              <div class="thumb">Портфолио 1</div>
+              <div class="thumb">Портфолио 2</div>
+              <div class="thumb">Портфолио 3</div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="grid-2">
+          <div>
+            <h2>О нас</h2>
+            <p class="muted">Наша команда делаем удобные веб-решения: лендинги, корпоративные сайты, интернет-магазины. Работы адаптируются под мобильные устройства и оптимизированы по скорости.</p>
+          </div>
+          <div>
+            <h3>Почему клиенты выбирают нас</h3>
+            <ul class="muted">
+              <li>Индивидуальный подход</li>
+              <li>Чёткие сроки</li>
+              <li>Сопровождение после запуска</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" style="background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent)">
+      <div class="container">
+        <h2>Услуги</h2>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px">
+          <div class="card">
+            <h4>Дизайн и прототип</h4>
+            <p class="muted">UX/UI, прототипы в Figma</p>
+          </div>
+          <div class="card">
+            <h4>Разработка</h4>
+            <p class="muted">HTML/CSS/JS, React, статические сайты</p>
+          </div>
+          <div class="card">
+            <h4>Поддержка</h4>
+            <p class="muted">Хостинг, обновления, аналитика</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="container">
+        <h2>Портфолио</h2>
+        <div class="portfolio" style="margin-top:12px">
+          <div class="thumb">Кейс A</div>
+          <div class="thumb">Кейс B</div>
+          <div class="thumb">Кейс C</div>
+          <div class="thumb">Кейс D</div>
+          <div class="thumb">Кейс E</div>
+          <div class="thumb">Кейс F</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <h2>Связаться</h2>
+        <div style="max-width:760px" class="card" aria-live="polite">
+          <form id="contactForm" onsubmit="return handleSubmit(event)">
+            <div class="form-row" style="margin-bottom:10px">
+              <input id="name" placeholder="Имя" required />
+              <input id="email" placeholder="Email" type="email" required />
+            </div>
+            <div style="margin-bottom:10px">
+              <input id="subject" placeholder="Тема" />
+            </div>
+            <div style="margin-bottom:10px">
+              <textarea id="message" placeholder="Сообщение" required></textarea>
+            </div>
+            <div style="display:flex;gap:10px;align-items:center">
+              <button class="cta" type="submit">Отправить</button>
+              <div id="formResult" class="muted" style="font-size:14px"></div>
+            </div>
+            <div class="muted" style="margin-top:10px">* Это клиентская форма, для реального приёма сообщений понадобится backend или сервис (Formspree, Netlify Forms и т.д.).</div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center">
+      <div class="muted">© <span id="yr"></span> МойСайт</div>
+      <div class="muted">Сделано с ♥</div>
+    </div>
+  </footer>
+
+  <script>
+    // set year
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // mobile toggle: simple demo to open a prompt menu (for demo purposes)
+    const menuBtn = document.getElementById('menuBtn');
+    menuBtn && menuBtn.addEventListener('click', ()=>{
+      const menu = ['О нас','#about','Услуги','#services','Портфолио','#work','Контакты','#contact'];
+      const html = menu.map((m,i)=> i%2===0 ? `<a href="${menu[i+1]}" style="display:block;padding:10px;color:white;text-decoration:none">${m}</a>` : '').join('');
+      const w = window.open('', 'menu','width=320,height=480');
+      w.document.write('<body style="background:#071021;color:#eef2f7;font-family:Inter;padding:12px"><h2>Меню</h2>'+html+'</body>');
+    });
+
+    // contact form (client-side only)
+    function handleSubmit(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const msg = document.getElementById('message').value.trim();
+      const res = document.getElementById('formResult');
+
+      if(!name||!email||!msg){
+        res.textContent = 'Пожалуйста, заполните обязательные поля.';
+        return false;
+      }
+      // simple email check
+      if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){
+        res.textContent = 'Неверный email.';
+        return false;
+      }
+
+      // demo behaviour: show a success message (replace with real submit)
+      res.textContent = 'Спасибо! Сообщение готово к отправке (это демонстрация).';
+      e.target.reset();
+      return false;
+    }
+  </script>
+</body>
+</html>
